@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Program 4</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Husky Phone Book</h1>
+    </header>
+    <main>
+      <div id="instructions-container">
+        <h2>Instructions</h2>
+        <p>1. To get all collected information click "Load Data"</p>
+        <p>2. When this is pressed, the data will load to your screen and 2 buttons will appear</p>
+        <p>3. The first is "clear data" which returns you to the homepage</p>
+        <p>4. The second is a query form which needs to take in either a first name, last name, or both</p>
+        <p>5. By pressing submit, you will recieve only data relevant to your query parameters</p>
+        <p>6. If there is information collected for a criteria for a person, it will be highlighted</p>
+        <p>7. Otherwise, it means that there is no information on the person regarding the columns criteria</p>
+      </div>
+      <div id="load-data">
+        <button id="load-data-btn">Load Data</button>
+      </div>
+
+      <div id="clear-data" class="hidden">
+        <button id="clear-data-btn">Clear Data</button>
+      </div>
+
+      <div id="container" class="hidden">
+        <div class="query-form-header">
+          <h2>Query</h2>
+          <p>Search for a person by inputting their first name, last name, or both, then press "Search"</p>
+        </div>
+        <form id="query-form">
+          <div class="form-control">
+            <label for="first-name">First Name</label>
+            <input type="text" placeholder="last name" id="first-name">
+          </div>
+  
+          <div class="form-control">
+            <label for="last-name">Last Name</label>
+            <input type="text" placeholder="last name" id="last-name">
+          </div>
+          
+          <p id="empty-query-error" class="hidden">Cannot Submit Empty Query</p>
+          <button type="submit">Search</button>
+        </form>
+      </div>
+
+      <div id="data-table-container" class="hidden">
+        <table id="data-table">
+          <h2>Data Retrieved</h2>
+          <tr id="table-headers">
+            <th>Name</th>
+            <th>Unique Identifier</th>
+            <th>Phone Number</th>
+            <th>Age</th>
+            <th>Weight</th>
+            <th>IQ</th>
+            <th>Gender</th>
+            <th>Nationality</th>
+            <th>Military</th>
+            <th>Hobby</th>
+            <th>University</th>
+            <th>Office</th>
+          </tr>
+        </table>
+      </div>
+
+      <div id="query-history" class="hidden">
+        <h2>Query History</h2>
+      </div>
+    </main>
+  </body>
+</html>

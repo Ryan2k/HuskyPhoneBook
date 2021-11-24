@@ -1,0 +1,3 @@
+1. Is it just allowing us to paste to S3 because I have the credentials set up on my machine
+   within the CLI with my secret access and everything? I didnt have to set any permissions on the
+   object like I did with java even though I had my default settings set up when I was using Java as well.

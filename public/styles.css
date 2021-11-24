@@ -1,0 +1,32 @@
+body {
+  background-image: url('images/notebook_texture2458.jpg');
+}
+.hidden {
+  display: none;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+table {
+  width: 100%;
+  background-color: grey;
+}
+
+.highlight {
+  background-color: #FFFF00;
+}
+
+#container {
+  background-color: grey;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(red, green, blue, alpha);
+  width: 400px;
+  max-width: 100%;
+  color: black;
+}
+
+.query-entry {
+  background-color: grey;
+}
