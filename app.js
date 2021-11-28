@@ -36,7 +36,11 @@ app.get('/', (req, res) => {
   res.sendFile('/public/index.html');
 });
 
-
+app.get('/test', (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.type('text');
+  res.send('connected');
+});
 /**
  * When the load button is clicked, sends a post request to this API with
  * the text contained in the file Dr. Dimpsey gave to us as the parameters
@@ -214,7 +218,7 @@ function onScan(err, data, res) {
 
 /**
  * Removes all entries from the dynamo db table. Takes in a name of a person as a parameter
- * (gets called once for each person) and calls the function below to delete them.
+ * (gets called once for each person) and calls the function below to delete them.-
  */
 app.post('/delete/dynamo', async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
