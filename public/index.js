@@ -150,6 +150,19 @@ async function sendToS3(TEXT) {
  * @param {List of Strings} dataEntries - list of each line representing an entry
  */
 function appendData(dataEntries) {
+  const DATA_TABLE_CONTAINER = document.getElementById('data-table-container');
+  DATA_TABLE_CONTAINER.classList.remove('hidden');
+
+  // this function will now just be displaying a box to show that the data is loaded
+  const RAW_ENTRIES = document.getElementById('raw-entries');
+
+  for (let i = 0; i < dataEntries.length; i++) {
+    let listItem = document.createElement('li');
+    listItem.innerHTML = dataEntries[i];
+    RAW_ENTRIES.appendChild(listItem);
+  }
+
+  /* dont need this anymore as I wont be displaying the data
   const DATA_TABLE = document.getElementById('data-table');
   const DATA_TABLE_CONTAINER = document.getElementById('data-table-container');
   DATA_TABLE_CONTAINER.classList.remove('hidden');
@@ -159,6 +172,7 @@ function appendData(dataEntries) {
     let newRow = createRow(dataElements);
     DATA_TABLE.appendChild(newRow);
   }
+  */
 }
 
 /**
@@ -182,10 +196,10 @@ async function clearData() {
    * children we created when appending td's. Doesnt delete the first one as those are
    * column headers (such as name, id, phone number, etc.)
    */
-  const DATA_TABLE = document.getElementById('data-table');
+  const RAW_ENTRIES = document.getElementById('data-table');
 
-  while (DATA_TABLE.children.length > 1) {
-    DATA_TABLE.removeChild(DATA_TABLE.children[1]);
+  while (RAW_ENTRIES.children.length > 1) {
+    RAW_ENTRIES.removeChild(DATA_TABLE.children[1]);
   }
 
   // hide the remainder of the data table
@@ -449,6 +463,7 @@ async function statusCheck(res) {
   return res;
 }
 
+/* used this to display the table but now that data is changing, it is irrelavent
 function createRow(data) {
     const MAP = new Map();
     const NEW_ROW = document.createElement('tr');
@@ -572,4 +587,4 @@ function createRow(data) {
     NEW_ROW.appendChild(O_ENTRY);
   
     return NEW_ROW;
-}
+} */

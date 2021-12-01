@@ -100,7 +100,7 @@ function deleteFromS3() {
     } else {
       console.log('successfully deleted');
     }
-  })
+  });
 }
 
 /**
